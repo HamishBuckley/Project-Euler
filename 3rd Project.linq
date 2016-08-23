@@ -8,13 +8,10 @@ is_prime(35).Dump();
 List<long> factors_list = factors(user_input);
 factors_list.Dump();
 for (int i = 1; i < factors_list.Count; i++){
-	i.Dump();
 	if (is_prime(factors_list[i])){
 		output_list.Add(factors_list[i]);
 	}
 }
-
-output_list.Dump();
 }
 
 // Define other methods and classes here
@@ -28,9 +25,14 @@ public bool is_prime(long number){
 		}
 public List<long> factors(long input_number){
 	List<long> factors = new List<long>();
-	for (long i = 1; i <= (input_number / 2); i++){
+	for (long i = 1; i < (Math.Sqrt(input_number)); i++){
 		if (input_number % i == 0){
 			factors.Add(i);
+		}
+	}
+	for(int n = 0; n < factors.Count(); n++){
+		if (!(factors.Contains(input_number / factors[n]))){
+			factors.Add(input_number / factors[n]);
 		}
 	}
 	return factors;
