@@ -28,7 +28,7 @@ while True:
         print(n)
         break
     range_increacer +=1
-print("press any key to exit")
+print("press 'enter' to exit")
 input()
 
     
