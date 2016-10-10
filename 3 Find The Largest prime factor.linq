@@ -2,6 +2,7 @@
 
 void Main()
 {
+Console.WriteLine("Finds the largest prime factor of n \n What is n?");
 long user_input = Convert.ToInt64(Console.ReadLine());
 List<long> output_list = new List<long>();
 List<long> factors_list = factors(user_input);
@@ -10,6 +11,7 @@ for (int i = 1; i < factors_list.Count; i++){
 		output_list.Add(factors_list[i]);
 	}
 }
+Console.WriteLine(output_list[output_list.Count - 1]);
 }
 
 // Define other methods and classes here
